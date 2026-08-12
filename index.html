@@ -1,11 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Benjamín Gálvez, Computer and Telecommunications Engineering Student.">
+  <title>Benjamín Gálvez | Portfolio</title>
 </head>
 <body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+
+    <!-- Logo (Name) -->
+    <div class="navbar__brand">
+      <a href="#hero" class="navbar__logo">Benjamín Gálvez</a>
+    </div>
+
+    <!-- Navigation section -->
+    <div class="navbar__menu">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#hero" class="nav__link">Home</a></li>
+        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+        <li class="nav__item"><a href="#experience" class="nav__link">Experience</a></li>
+        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Select language and theme -->
+    <div class="navbar__actions">
+      <select name="language" id="language" class="language-selector">
+        <option value="en">EN</option>
+        <option value="es">ES</option>
+      </select>
+      <button id="theme-toggle" class="btn-theme">Toggle Theme</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <main>
+    <section id="hero" class="hero">
+      <p class="hero__greeting">Hello, I am</p>
+      <h1 class="hero__name">Benjamín Gálvez</h1>
+      <h2 class="hero__role">Computer and Telecommunications Engineering Student</h2>
+    </section>
     
+    <!-- About Section -->
+    <section id="about" class="about">
+      <span class="section__subtitle">Who am I</span>
+      <h2 class="section__title">About Me</h2>
+      
+      <p class="about__text"> 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed risus orci. Nullam venenatis eros id justo pharetra consequat. Donec viverra tempus ante non malesuada. Sed congue odio quis sem mattis ultrices. Fusce ac convallis dui. Donec finibus scelerisque enim, molestie rhoncus neque tempor eu.
+      </p>
+
+      <img src="image.jpg" alt="About me image" class="about__image">
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <span class="section__subtitle">My work</span>
+      <h2 class="section__title">Projects</h2>
+
+      <!-- Project grid (3 columns, 2 rows) -->
+      <div class="projects__grid">
+    
+        <!-- Example project 1 card -->
+        <article class="project-card">
+            
+          <!-- Project image -->
+          <div class="project-card__image-container">
+            <img src="project1image.jpg" alt="project 1 image" class="project-card__image">
+          </div>
+
+          <!-- Card content (Title, Description, Technologies, Link) -->
+          <div class="project-card__content">
+              
+            <!-- Title -->
+            <h3 class="project-card__title">Project 1 title</h3>
+            
+            <!-- Description -->
+            <p class="project-card__desc">Project 1 description</p>
+            
+
+            <!-- Technologies -->
+            <div class="project-card__tech">
+              <span class="tech-tag">Tech1</span>
+              <span class="tech-tag">Tech2</span>
+              <span class="tech-tag">Tech3</span>
+            </div>
+
+            <!-- Link -->
+            <div class="project-card__links">
+              <a href="https://github.com/Kiraai-Git" target="_blank" class="project-link">
+                See more
+              </a>
+            </div>
+        
+          </div>
+        </article>
+
+        <!-- Example project 2 card -->
+        <article class="project-card">
+            
+          <!-- Project image -->
+          <div class="project-card__image-container">
+            <img src="project2image.jpg" alt="project 2 image" class="project-card__image">
+          </div>
+
+          <!-- Card content (Title, Description, Technologies, Link) -->
+          <div class="project-card__content">
+              
+            <!-- Title -->
+            <h3 class="project-card__title">Project 2 title</h3>
+            
+            <!-- Description -->
+            <p class="project-card__desc">Project 2 description</p>
+            
+
+            <!-- Technologies -->
+            <div class="project-card__tech">
+              <span class="tech-tag">Tech1</span>
+              <span class="tech-tag">Tech2</span>
+              <span class="tech-tag">Tech3</span>
+            </div>
+
+            <!-- Link -->
+            <div class="project-card__links">
+              <a href="https://github.com/Kiraai-Git" target="_blank" class="project-link">
+                See more
+              </a>
+            </div>
+        
+          </div>
+        </article>
+
+        <!-- Example project 3 card -->
+        <article class="project-card">
+            
+          <!-- Project image -->
+          <div class="project-card__image-container">
+            <img src="project3image.jpg" alt="project 3 image" class="project-card__image">
+          </div>
+
+          <!-- Card content (Title, Description, Technologies, Link) -->
+          <div class="project-card__content">
+              
+            <!-- Title -->
+            <h3 class="project-card__title">Project 3 title</h3>
+            
+            <!-- Description -->
+            <p class="project-card__desc">Project 3 description</p>
+            
+
+            <!-- Technologies -->
+            <div class="project-card__tech">
+              <span class="tech-tag">Tech1</span>
+              <span class="tech-tag">Tech2</span>
+              <span class="tech-tag">Tech3</span>
+            </div>
+
+            <!-- Link -->
+            <div class="project-card__links">
+              <a href="https://github.com/Kiraai-Git" target="_blank" class="project-link">
+                See more
+              </a>
+            </div>
+        
+          </div>
+        </article>
+
+        <!-- Example project 4 card -->
+        <article class="project-card">
+            
+          <!-- Project image -->
+          <div class="project-card__image-container">
+            <img src="project4image.jpg" alt="project 4 image" class="project-card__image">
+          </div>
+
+          <!-- Card content (Title, Description, Technologies, Link) -->
+          <div class="project-card__content">
+              
+            <!-- Title -->
+            <h3 class="project-card__title">Project 4 title</h3>
+            
+            <!-- Description -->
+            <p class="project-card__desc">Project 4 description</p>
+            
+
+            <!-- Technologies -->
+            <div class="project-card__tech">
+              <span class="tech-tag">Tech1</span>
+              <span class="tech-tag">Tech2</span>
+              <span class="tech-tag">Tech3</span>
+            </div>
+
+            <!-- Link -->
+            <div class="project-card__links">
+              <a href="https://github.com/Kiraai-Git" target="_blank" class="project-link">
+                See more
+              </a>
+            </div>
+        
+          </div>
+        </article>
+
+        <!-- Example project 5 card -->
+        <article class="project-card">
+            
+          <!-- Project image -->
+          <div class="project-card__image-container">
+            <img src="project5image.jpg" alt="project 5 image" class="project-card__image">
+          </div>
+
+          <!-- Card content (Title, Description, Technologies, Link) -->
+          <div class="project-card__content">
+              
+            <!-- Title -->
+            <h3 class="project-card__title">Project 5 title</h3>
+            
+            <!-- Description -->
+            <p class="project-card__desc">Project 5 description</p>
+            
+
+            <!-- Technologies -->
+            <div class="project-card__tech">
+              <span class="tech-tag">Tech1</span>
+              <span class="tech-tag">Tech2</span>
+              <span class="tech-tag">Tech3</span>
+            </div>
+
+            <!-- Link -->
+            <div class="project-card__links">
+              <a href="https://github.com/Kiraai-Git" target="_blank" class="project-link">
+                See more
+              </a>
+            </div>
+        
+          </div>
+        </article>
+
+         <!-- Example project 6 card -->
+        <article class="project-card">
+            
+          <!-- Project image -->
+          <div class="project-card__image-container">
+            <img src="project6image.jpg" alt="project 6 image" class="project-card__image">
+          </div>
+
+          <!-- Card content (Title, Description, Technologies, Link) -->
+          <div class="project-card__content">
+              
+            <!-- Title -->
+            <h3 class="project-card__title">Project 6 title</h3>
+            
+            <!-- Description -->
+            <p class="project-card__desc">Project 6 description</p>
+            
+
+            <!-- Technologies -->
+            <div class="project-card__tech">
+              <span class="tech-tag">Tech1</span>
+              <span class="tech-tag">Tech2</span>
+              <span class="tech-tag">Tech3</span>
+            </div>
+
+            <!-- Link -->
+            <div class="project-card__links">
+              <a href="https://github.com/Kiraai-Git" target="_blank" class="project-link">
+                See more
+              </a>
+            </div>
+        
+          </div>
+        </article>
+      </div>
+          
+      <!-- See more button -->
+      <div class="projects__footer">
+        <a href="https://github.com/Kiraai-Git" target="_blank" class="btn btn--primary">
+          View all projects
+        </a>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+      <span class="section__subtitle">My career</span>
+      <h2 class="section__title">Experience</h2>
+
+      <!-- Main grid (2 columns, 1 row) -->
+      <div class="experience__container">
+          
+        <!-- Left column: Buttons -->
+        <div class="experience__tabs">
+            <button class="experience__tab experience__tab--active" onclick="openTab(event, 'job-1')">Experience 1</button>
+            <button class="experience__tab" onclick="openTab(event, 'job-2')">Experience 2</button>
+            <button class="experience__tab" onclick="openTab(event, 'job-3')">Experience 3</button>
+        </div>
+
+        <!-- Right column: Content -->
+        <div class="experience__content">
+
+          <div id="job-1" class="experience__panel experience__panel--active">
+            <h3 class="experience__role">Job Title 1</h3>
+            <span class="experience__duration">start date - end date</span>
+            <ul class="experience__list">
+              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            </ul>
+          </div>
+
+          <div id="job-2" class="experience__panel experience__panel--active">
+            <h3 class="experience__role">Job Title 2</h3>
+            <span class="experience__duration">start date - end date</span>
+            <ul class="experience__list">
+              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            </ul>
+          </div>
+
+          <div id="job-3" class="experience__panel experience__panel--active">
+            <h3 class="experience__role">Job Title 3</h3>
+            <span class="experience__duration">start date - end date</span>
+            <ul class="experience__list">
+              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills">
+      <span class="section__subtitle">Core Competencies</span>
+      <h2 class="section__title">Technical Skills</h2>
+
+      <div class="skills__grid">
+          <!-- Category 1 -->
+          <div class="skills__category">
+            <h3 class="skills__category-title">Category 1</h3>
+            <ul class="skills__list">
+              <li>Skill 1</li>
+              <li>Skill 2</li>
+              <li>Skill 3</li>
+              <li>Skill 4</li>
+            </ul>
+          </div>
+
+          <!-- Category 2 -->
+          <div class="skills__category">
+            <h3 class="skills__category-title">Category 2</h3>
+            <ul class="skills__list">
+              <li>Skill 1</li>
+              <li>Skill 2</li>
+              <li>Skill 3</li>
+              <li>Skill 4</li>
+            </ul>
+          </div>
+          
+          <!-- Category 3 -->
+          <div class="skills__category">
+            <h3 class="skills__category-title">Category 3</h3>
+            <ul class="skills__list">
+              <li>Skill 1</li>
+              <li>Skill 2</li>
+              <li>Skill 3</li>
+              <li>Skill 4</li>
+            </ul>
+          </div>
+
+          <!-- Category 4 -->
+          <div class="skills__category">
+            <h3 class="skills__category-title">Category 4</h3>
+            <ul class="skills__list">
+              <li>Skill 1</li>
+              <li>Skill 2</li>
+              <li>Skill 3</li>
+              <li>Skill 4</li>
+            </ul>
+          </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <span class="section__subtitle">Get in touch</span>
+      <h2 class="section__title">Contact Me</h2>
+
+      <!-- Contact grid (2 columns, 1 row)-->
+      <div class="contact__container">
+          
+        <!-- Left column: Information and Social Media -->
+        <div class="contact__info">
+          <h3 class="contact__heading">Let's talk!</h3>
+          <p class="contact__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed risus orci. Nullam venenatis eros id justo pharetra consequat. Donec viverra tempus ante non malesuada. Sed congue odio quis sem mattis ultrices. Fusce ac convallis dui. Donec finibus scelerisque enim, molestie rhoncus neque tempor eu.
+          </p>
+
+          <!-- Lista de redes/contacto -->
+          <ul class="contact__social-list">
+           
+            <!-- Email -->
+            <li>
+              <a href="mailto:tu-correo@email.com" class="contact__link">
+                email@email.com
+              </a>
+            </li>
+           
+            <!-- LinkedIn -->
+            <li>
+              <a href="https://linkedin.com/in/" target="_blank" class="contact__link">
+                  LinkedIn
+              </a>
+            </li>
+           
+            <!-- GitHub -->
+            <li>
+              <a href="https://github.com/Kiraai-Git" target="_blank" class="contact__link">
+                  GitHub
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right column: Form -->
+        <div class="contact__form-container">
+          <form action="https://link-to-send-form.com" method="POST" class="contact__form">
+              
+            <!-- Name -->
+            <div class="form__group">
+              <label for="name" class="form__label">Name</label>
+              <input type="text" id="name" name="name" class="form__input" placeholder="Your name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form__group">
+              <label for="email" class="form__label">Email</label>
+              <input type="email" id="email" name="email" class="form__input" placeholder="Your email address" required>
+            </div>
+
+            <!-- Subject -->
+            <div class="form__group">
+              <label for="subject" class="form__label">Subject</label>
+              <input type="text" id="subject" name="subject" class="form__input" placeholder="What is this about?" required>
+            </div>
+
+            <!-- Textarea -->
+            <div class="form__group">
+              <label for="message" class="form__label">Message</label>
+              <textarea id="message" name="message" class="form__textarea" placeholder="Write your message here..." rows="5" required></textarea>
+            </div>
+
+            <!-- Send button -->
+            <button type="submit" class="btn btn--primary form__submit">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer__container">
+    <p class="footer__text">
+      © 2026 Benjamín Gálvez. Built from scratch with HTML and CSS.
+    </p>
+
+    <!-- Back to Top Button -->
+    <a href="#hero" class="footer__back-top" aria-label="Volver al inicio">
+      Go to top
+    </a>
+  </div>
+</footer>
+
 </html>
