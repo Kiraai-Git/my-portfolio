@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio of Benjamín Gálvez, Computer and Telecommunications Engineering Student.">
   <title>Benjamín Gálvez | Portfolio</title>
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
 
@@ -13,7 +14,9 @@
 
     <!-- Logo (Name) -->
     <div class="navbar__brand">
-      <a href="#hero" class="navbar__logo">Benjamín Gálvez</a>
+      <a href="#hero" class="navbar__logo">
+        <span class="logo__code">&lt;</span>Benjamín Gálvez<span class="logo__code">/&gt;</span>
+      </a>
     </div>
 
     <!-- Navigation section -->
@@ -30,20 +33,57 @@
 
     <!-- Select language and theme -->
     <div class="navbar__actions">
-      <select name="language" id="language" class="language-selector">
-        <option value="en">EN</option>
-        <option value="es">ES</option>
-      </select>
-      <button id="theme-toggle" class="btn-theme">Toggle Theme</button>
+
+      <button id="language-toggle" class="btn-lang" aria-label="Cambiar idioma">
+        <!-- Icono de Globo Terráqueo -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <!-- Texto del idioma -->
+        <span>ES</span>
+      </button>
+
+      <!-- Toggle theme -->
+      <button id="theme-toggle" class="btn-theme" aria-label="Toggle Dark/Light Mode">
+        <!-- Sun icon -->
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2"></path>
+          <path d="M12 20v2"></path>
+          <path d="m4.93 4.93 1.41 1.41"></path>
+          <path d="m17.66 17.66 1.41 1.41"></path>
+          <path d="M2 12h2"></path>
+          <path d="M20 12h2"></path>
+          <path d="m6.34 17.66-1.41 1.41"></path>
+          <path d="m19.07 4.93-1.41 1.41"></path>
+        </svg>
+
+        <!-- Moon icon -->
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+        </svg>
+      </button>
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <main>
+    <!-- Hero Section -->
     <section id="hero" class="hero">
-      <p class="hero__greeting">Hello, I am</p>
-      <h1 class="hero__name">Benjamín Gálvez</h1>
-      <h2 class="hero__role">Computer and Telecommunications Engineering Student</h2>
+      <div class="hero__content">
+        <p class="hero__greeting">Hello, I am</p>
+        <h1 class="hero__name">Benjamín Gálvez</h1>
+        <h2 class="hero__role">Computer and Telecommunications Engineering Student</h2>
+      </div>
+
+      <a href="#about" class="hero__scroll" aria-label="Scroll to About section">
+        <span class="scroll-text">SCROLL</span>
+        <!-- Arrow icon -->
+        <svg class="scroll-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m6 9 6 6 6-6"></path>
+        </svg>
+      </a>
     </section>
     
     <!-- About Section -->
@@ -51,6 +91,12 @@
       <span class="section__subtitle">Who am I</span>
       <h2 class="section__title">About Me</h2>
       
+      <p class="about__text"> 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed risus orci. Nullam venenatis eros id justo pharetra consequat. Donec viverra tempus ante non malesuada. Sed congue odio quis sem mattis ultrices. Fusce ac convallis dui. Donec finibus scelerisque enim, molestie rhoncus neque tempor eu.
+      </p>
+      <p class="about__text"> 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed risus orci. Nullam venenatis eros id justo pharetra consequat. Donec viverra tempus ante non malesuada. Sed congue odio quis sem mattis ultrices. Fusce ac convallis dui. Donec finibus scelerisque enim, molestie rhoncus neque tempor eu.
+      </p>
       <p class="about__text"> 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed risus orci. Nullam venenatis eros id justo pharetra consequat. Donec viverra tempus ante non malesuada. Sed congue odio quis sem mattis ultrices. Fusce ac convallis dui. Donec finibus scelerisque enim, molestie rhoncus neque tempor eu.
       </p>
@@ -295,9 +341,9 @@
           
         <!-- Left column: Buttons -->
         <div class="experience__tabs">
-            <button class="experience__tab experience__tab--active" onclick="openTab(event, 'job-1')">Experience 1</button>
-            <button class="experience__tab" onclick="openTab(event, 'job-2')">Experience 2</button>
-            <button class="experience__tab" onclick="openTab(event, 'job-3')">Experience 3</button>
+          <button class="experience__tab experience__tab--active" onclick="openTab(event, 'job-1')" aria-controls="job-1" aria-selected="true">Experience 1</button>
+          <button class="experience__tab" onclick="openTab(event, 'job-2')" aria-controls="job-2" aria-selected="false">Experience 2</button>
+          <button class="experience__tab" onclick="openTab(event, 'job-3')" aria-controls="job-3" aria-selected="false">Experience 3</button>
         </div>
 
         <!-- Right column: Content -->
@@ -313,7 +359,7 @@
             </ul>
           </div>
 
-          <div id="job-2" class="experience__panel experience__panel--active">
+          <div id="job-2" class="experience__panel">
             <h3 class="experience__role">Job Title 2</h3>
             <span class="experience__duration">start date - end date</span>
             <ul class="experience__list">
@@ -323,7 +369,7 @@
             </ul>
           </div>
 
-          <div id="job-3" class="experience__panel experience__panel--active">
+          <div id="job-3" class="experience__panel">
             <h3 class="experience__role">Job Title 3</h3>
             <span class="experience__duration">start date - end date</span>
             <ul class="experience__list">
@@ -403,7 +449,7 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed risus orci. Nullam venenatis eros id justo pharetra consequat. Donec viverra tempus ante non malesuada. Sed congue odio quis sem mattis ultrices. Fusce ac convallis dui. Donec finibus scelerisque enim, molestie rhoncus neque tempor eu.
           </p>
 
-          <!-- Lista de redes/contacto -->
+          <!-- Contact information -->
           <ul class="contact__social-list">
            
             <!-- Email -->
@@ -466,20 +512,71 @@
       </div>
     </section>
   </main>
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer__container">
+      <p class="footer__text">
+        © 2026 Benjamín Gálvez. Built from scratch with HTML and CSS.
+      </p>
+
+      <!-- Back to Top Button -->
+      <a id="back-to-top" href="#hero" class="footer__back-top" aria-label="Volver al inicio">
+        Go to top
+      </a>
+    </div>
+  </footer>
+
+<script>
+
+  // Experience section tab functionality
+  function openTab(event, targetId) {
+    const tabButtons = document.querySelectorAll('.experience__tab');
+    const tabPanels = document.querySelectorAll('.experience__panel');
+
+    tabButtons.forEach((button) => {
+      button.classList.remove('experience__tab--active');
+      button.setAttribute('aria-selected', 'false');
+    });
+
+    tabPanels.forEach((panel) => {
+      panel.classList.remove('experience__panel--active');
+    });
+
+    event.currentTarget.classList.add('experience__tab--active');
+    event.currentTarget.setAttribute('aria-selected', 'true');
+
+    const targetPanel = document.getElementById(targetId);
+    if (targetPanel) {
+      targetPanel.classList.add('experience__panel--active');
+    }
+  }
+
+  // Back to Top button functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const backToTop = document.getElementById('back-to-top');
+    if (!backToTop) {
+      return;
+    }
+
+    const toggleBackToTop = () => {
+      if (window.scrollY > 700) {
+        backToTop.classList.add('footer__back-top--visible');
+      } else {
+        backToTop.classList.remove('footer__back-top--visible');
+      }
+    };
+
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    toggleBackToTop();
+
+    backToTop.addEventListener('click', (event) => {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+</script>
+
 </body>
-
-<!-- Footer Section -->
-<footer class="footer">
-  <div class="footer__container">
-    <p class="footer__text">
-      © 2026 Benjamín Gálvez. Built from scratch with HTML and CSS.
-    </p>
-
-    <!-- Back to Top Button -->
-    <a href="#hero" class="footer__back-top" aria-label="Volver al inicio">
-      Go to top
-    </a>
-  </div>
-</footer>
 
 </html>
