@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio of Benjamín Gálvez, Computer and Telecommunications Engineering Student.">
   <title>Benjamín Gálvez | Portfolio</title>
+  <script>
+    (function () {
+      var stored = localStorage.getItem('theme');
+      var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
@@ -22,30 +29,30 @@
     <!-- Navigation section -->
     <div class="navbar__menu">
       <ul class="nav__list">
-        <li class="nav__item"><a href="#hero" class="nav__link">Home</a></li>
-        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-        <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
-        <li class="nav__item"><a href="#experience" class="nav__link">Experience</a></li>
-        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+        <li class="nav__item"><a href="#hero" class="nav__link" data-i18n="nav.home">Home</a></li>
+        <li class="nav__item"><a href="#about" class="nav__link" data-i18n="nav.about">About</a></li>
+        <li class="nav__item"><a href="#projects" class="nav__link" data-i18n="nav.projects">Projects</a></li>
+        <li class="nav__item"><a href="#experience" class="nav__link" data-i18n="nav.experience">Experience</a></li>
+        <li class="nav__item"><a href="#skills" class="nav__link" data-i18n="nav.skills">Skills</a></li>
+        <li class="nav__item"><a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </div>
 
     <!-- Select language and theme -->
     <div class="navbar__actions">
 
-      <button id="language-toggle" class="btn-lang" aria-label="Cambiar idioma">
+      <button id="language-toggle" class="btn-lang" aria-label="Switch language" data-i18n-aria="lang.toggle">
         <!-- World icon -->
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"></circle>
           <line x1="2" y1="12" x2="22" y2="12"></line>
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
         </svg>
-        <span>ES</span>
+        <span id="language-toggle-label">ES</span>
       </button>
 
       <!-- Toggle theme -->
-      <button id="theme-toggle" class="btn-theme" aria-label="Toggle Dark/Light Mode">
+      <button id="theme-toggle" class="btn-theme" aria-label="Toggle Dark/Light Mode" data-i18n-aria="theme.toggle">
         <!-- Sun icon -->
         <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="4"></circle>
@@ -71,13 +78,13 @@
     <!-- Hero Section -->
     <section id="hero" class="hero">
       <div class="hero__content">
-        <p class="hero__greeting">Hello, I am</p>
+        <p class="hero__greeting" data-i18n="hero.greeting">Hello, I am</p>
         <h1 class="hero__name">Benjamín Gálvez</h1>
-        <h2 class="hero__role">Computer and Telecommunications Engineering Student</h2>
+        <h2 class="hero__role" data-i18n="hero.role">Computer and Telecommunications Engineering Student</h2>
       </div>
 
-      <a href="#about" class="hero__scroll" aria-label="Scroll to About section">
-        <span class="scroll-text">SCROLL</span>
+      <a href="#about" class="hero__scroll" aria-label="Scroll to About section" data-i18n-aria="hero.scroll">
+        <span class="scroll-text" data-i18n="hero.scrollText">SCROLL</span>
         <!-- Arrow icon -->
         <svg class="scroll-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="m6 9 6 6 6-6"></path>
@@ -89,20 +96,20 @@
     <section id="about" class="about">
       <div class="about__container">
         <div class="about__content">
-          <span class="section__subtitle">Who am I</span>
-          <h2 class="section__title">About Me</h2>
+          <span class="section__subtitle" data-i18n="about.subtitle">Who am I</span>
+          <h2 class="section__title" data-i18n="about.title">About Me</h2>
 
-          <p class="about__text"> 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed risus orci. Nullam venenatis eros id justo pharetra consequat. Donec viverra tempus ante non malesuada. Sed congue odio quis sem mattis ultrices. Fusce ac convallis dui. Donec finibus scelerisque enim, molestie rhoncus neque tempor eu.
+          <p class="about__text" data-i18n="about.p1">
+            I'm a fourth-year Computer and Telecommunications Engineering student focused on backend development, networks, and automation. I like building systems that hold up under real conditions, not just in a test case.
           </p>
-          <p class="about__text"> 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed risus orci. Nullam venenatis eros id justo pharetra consequat. Donec viverra tempus ante non malesuada. Sed congue odio quis sem mattis ultrices. Fusce ac convallis dui. Donec finibus scelerisque enim, molestie rhoncus neque tempor eu.
+          <p class="about__text" data-i18n="about.p2">
+            During my first internship, I helped build a CRM from the ground up — leading development on a mass invoicing system that pulled data directly from Chile's SII in real time, and setting up Supabase for authentication across the platform. It's where I first saw how backend decisions play out under real usage.
           </p>
-          <p class="about__text"> 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed risus orci. Nullam venenatis eros id justo pharetra consequat. Donec viverra tempus ante non malesuada. Sed congue odio quis sem mattis ultrices. Fusce ac convallis dui. Donec finibus scelerisque enim, molestie rhoncus neque tempor eu.
+          <p class="about__text" data-i18n="about.p3">
+            Right now I'm focused on gaining real-world experience — I'm working toward my second internship and open to opportunities this summer.
           </p>
         </div>
-        <img src="image.jpg" alt="About me image" class="about__image">
+        <img src="image.jpg" alt="About me image" class="about__image" data-i18n-alt="about.imageAlt">
       </div>
     </section>
 
@@ -110,62 +117,104 @@
     <section id="projects" class="projects">
       <div class="projects__container">
         
-        <span class="section__subtitle">My work</span>
-        <h2 class="section__title">Projects</h2>
+        <span class="section__subtitle" data-i18n="projects.subtitle">My work</span>
+        <h2 class="section__title" data-i18n="projects.title">Projects</h2>
 
         <!-- Project grid (1 column) -->
         <div class="projects__grid">
       
           <!-- Project 1 -->
           <article class="project-card">
+            <div class="project-card__terminal" aria-hidden="true">
+              <div class="terminal__bar">
+                <span class="terminal__dot terminal__dot--red"></span>
+                <span class="terminal__dot terminal__dot--yellow"></span>
+                <span class="terminal__dot terminal__dot--green"></span>
+                <span class="terminal__title">cmatch</span>
+              </div>
+              <div class="terminal__body">
+                <p class="terminal__line"><span class="terminal__prompt">$</span>./cmatch</p>
+                <p class="terminal__output">[MATCH] Player_04 vs Player_11 (ΔELO 18)</p>
+                <p class="terminal__output">[BOARD] slot 2/2 in use</p>
+                <p class="terminal__output">[SNAPSHOT] state saved <span class="terminal__cursor"></span></p>
+              </div>
+            </div>
             <div class="project-card__content">
               <div class="project-card__header">
-                <h3 class="project-card__title">Project Title 1</h3>
-                <a href="https://github.com/Kiraai-Git" target="_blank" class="project-link" aria-label="Ver proyecto">
+                <h3 class="project-card__title">cmatch</h3>
+                <a href="https://github.com/Kiraai-Git/cmatch-concurrent-matchmaking" target="_blank" class="project-link" aria-label="View project" data-i18n-aria="projects.viewProject">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                 </a>
               </div>
-              <p class="project-card__desc">Project description</p>
+              <p class="project-card__desc" data-i18n="projects.cmatch.desc">Concurrent matchmaking engine simulating a multithreaded tournament — ELO-based pairing, shared boards guarded across threads, and persistent snapshots.</p>
               <div class="project-card__tech">
-                <span class="tech-tag">Tech 1</span>
-                <span class="tech-tag">Tech 2</span>
-                <span class="tech-tag">Tech 3</span>
+                <span class="tech-tag">C</span>
+                <span class="tech-tag">POSIX Threads</span>
+                <span class="tech-tag" data-i18n="projects.tag.concurrency">Concurrency</span>
               </div>
             </div>
           </article>
 
           <!-- Project 2 -->
           <article class="project-card">
+            <div class="project-card__terminal" aria-hidden="true">
+              <div class="terminal__bar">
+                <span class="terminal__dot terminal__dot--red"></span>
+                <span class="terminal__dot terminal__dot--yellow"></span>
+                <span class="terminal__dot terminal__dot--green"></span>
+                <span class="terminal__title">memsim.c</span>
+              </div>
+              <div class="terminal__body">
+                <p class="terminal__line"><span class="terminal__prompt">$</span>./memsim 1024 FIRST_FIT trace.txt</p>
+                <p class="terminal__output">[ALLOC] PID 1 → 256B @ 0x0000</p>
+                <p class="terminal__output">[ALLOC] PID 2 → 128B @ 0x0100</p>
+                <p class="terminal__output">[FREE]  PID 1 <span class="terminal__cursor"></span></p>
+              </div>
+            </div>
             <div class="project-card__content">
               <div class="project-card__header">
-                <h3 class="project-card__title">Project Title 2</h3>
-                <a href="https://github.com/Kiraai-Git" target="_blank" class="project-link" aria-label="Ver proyecto">
+                <h3 class="project-card__title">memsim</h3>
+                <a href="https://github.com/Kiraai-Git/memsim-memory-allocator" target="_blank" class="project-link" aria-label="View project" data-i18n-aria="projects.viewProject">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                 </a>
               </div>
-              <p class="project-card__desc">Project description</p>
+              <p class="project-card__desc" data-i18n="projects.memsim.desc">Memory allocation simulator implementing First Fit, Best Fit, and Worst Fit policies over a virtual address space, driven by trace files.</p>
               <div class="project-card__tech">
-                <span class="tech-tag">Tech 1</span>
-                <span class="tech-tag">Tech 2</span>
-                <span class="tech-tag">Tech 3</span>
+                <span class="tech-tag">C</span>
+                <span class="tech-tag" data-i18n="projects.tag.systems">Systems Programming</span>
+                <span class="tech-tag" data-i18n="projects.tag.memory">Memory Management</span>
               </div>
             </div>
           </article>
 
           <!-- Project 3 -->
           <article class="project-card">
+            <div class="project-card__terminal" aria-hidden="true">
+              <div class="terminal__bar">
+                <span class="terminal__dot terminal__dot--red"></span>
+                <span class="terminal__dot terminal__dot--yellow"></span>
+                <span class="terminal__dot terminal__dot--green"></span>
+                <span class="terminal__title">toad-cli</span>
+              </div>
+              <div class="terminal__body">
+                <p class="terminal__line"><span class="terminal__prompt">$</span>./toad-cli start worker.sh</p>
+                <p class="terminal__output">[OK] process started → PID 4021</p>
+                <p class="terminal__line"><span class="terminal__prompt">$</span>./toad-cli ps</p>
+                <p class="terminal__output">4021  RUNNING  worker.sh <span class="terminal__cursor"></span></p>
+              </div>
+            </div>
             <div class="project-card__content">
               <div class="project-card__header">
-                <h3 class="project-card__title">Project Title 3</h3>
-                <a href="https://github.com/Kiraai-Git" target="_blank" class="project-link" aria-label="Ver proyecto">
+                <h3 class="project-card__title" data-i18n="projects.toad.title">toad — Process Manager</h3>
+                <a href="https://github.com/Kiraai-Git/TareaSO1" target="_blank" class="project-link" aria-label="View project" data-i18n-aria="projects.viewProject">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                 </a>
               </div>
-              <p class="project-card__desc">Project description</p>
+              <p class="project-card__desc" data-i18n="projects.toad.desc">Background process manager built as a daemon-and-CLI pair, communicating over named pipes (FIFOs) to start, list, and signal processes.</p>
               <div class="project-card__tech">
-                <span class="tech-tag">Tech 1</span>
-                <span class="tech-tag">Tech 2</span>
-                <span class="tech-tag">Tech 3</span>
+                <span class="tech-tag">C</span>
+                <span class="tech-tag">Linux IPC</span>
+                <span class="tech-tag">Daemons</span>
               </div>
             </div>
           </article>
@@ -175,7 +224,7 @@
         <!-- See more button -->
         <div class="projects__footer">
           <a href="https://github.com/Kiraai-Git" target="_blank" class="btn btn--glass">
-            <span>View all projects</span>
+            <span data-i18n="projects.viewAll">View all projects</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
         </div>
@@ -186,49 +235,38 @@
     <!-- Experience Section -->
     <section id="experience" class="experience">
      <div class="experience__wrapper">
-      <span class="section__subtitle">My career</span>
-      <h2 class="section__title">Experience</h2>
+      <span class="section__subtitle" data-i18n="experience.subtitle">My career</span>
+      <h2 class="section__title" data-i18n="experience.title">Experience</h2>
 
       <!-- Main grid (2 columns, 1 row) -->
       <div class="experience__container">
-          
+
         <!-- Left column: Buttons -->
         <div class="experience__tabs">
-          <button class="experience__tab experience__tab--active" onclick="openTab(event, 'job-1')" aria-controls="job-1" aria-selected="true">Experience 1</button>
-          <button class="experience__tab" onclick="openTab(event, 'job-2')" aria-controls="job-2" aria-selected="false">Experience 2</button>
-          <button class="experience__tab" onclick="openTab(event, 'job-3')" aria-controls="job-3" aria-selected="false">Experience 3</button>
+          <button class="experience__tab experience__tab--active" onclick="openTab(event, 'job-1')" aria-controls="job-1" aria-selected="true" data-i18n="experience.job1.role">Web Development Intern</button>
+          <button class="experience__tab" onclick="openTab(event, 'job-2')" aria-controls="job-2" aria-selected="false" data-i18n="experience.job2.role">Academic Tutor</button>
         </div>
 
         <!-- Right column: Content -->
         <div class="experience__content">
 
           <div id="job-1" class="experience__panel experience__panel--active">
-            <h3 class="experience__role">Job Title 1</h3>
-            <span class="experience__duration">start date - end date</span>
+            <h3 class="experience__role" data-i18n="experience.job1.role">Web Development Intern</h3>
+            <span class="experience__duration" data-i18n="experience.job1.duration">Jan 2026 – Mar 2026 · Santiago, Chile</span>
             <ul class="experience__list">
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              <li data-i18n="experience.job1.bullet1">Led development of a CRM from the ground up, working with React, JSX, JavaScript, and Python.</li>
+              <li data-i18n="experience.job1.bullet2">Built a mass invoicing and accounting system that pulled data in real time from Chile's SII.</li>
+              <li data-i18n="experience.job1.bullet3">Set up Supabase for authentication and centralized user/company management.</li>
+              <li data-i18n="experience.job1.bullet4">Wrote Python scripts for automated testing and edge-case handling over CSV data.</li>
             </ul>
           </div>
 
           <div id="job-2" class="experience__panel">
-            <h3 class="experience__role">Job Title 2</h3>
-            <span class="experience__duration">start date - end date</span>
+            <h3 class="experience__role" data-i18n="experience.job2.fullRole">Independent Academic Tutor</h3>
+            <span class="experience__duration" data-i18n="experience.job2.duration">Oct 2023 – Present · Santiago, Chile / Online</span>
             <ul class="experience__list">
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-            </ul>
-          </div>
-
-          <div id="job-3" class="experience__panel">
-            <h3 class="experience__role">Job Title 3</h3>
-            <span class="experience__duration">start date - end date</span>
-            <ul class="experience__list">
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              <li data-i18n="experience.job2.bullet1">Tutor students in math, C++, and networking — from UDP peers to learners abroad.</li>
+              <li data-i18n="experience.job2.bullet2">Design individualized lessons that adapt to each student's pace and gaps.</li>
             </ul>
           </div>
 
@@ -239,51 +277,52 @@
 
     <section id="skills" class="skills">
      <div class="skills__wrapper">
-      <span class="section__subtitle">Core Competencies</span>
-      <h2 class="section__title">Technical Skills</h2>
+      <span class="section__subtitle" data-i18n="skills.subtitle">Core Competencies</span>
+      <h2 class="section__title" data-i18n="skills.title">Technical Skills</h2>
 
       <div class="skills__grid">
-          <!-- Category 1 -->
+          <!-- Languages -->
           <div class="skills__category">
-            <h3 class="skills__category-title">Category 1</h3>
+            <h3 class="skills__category-title" data-i18n="skills.languages">Languages</h3>
             <ul class="skills__list">
-              <li>Skill 1</li>
-              <li>Skill 2</li>
-              <li>Skill 3</li>
-              <li>Skill 4</li>
+              <li>C++</li>
+              <li>Python</li>
+              <li>Java</li>
+              <li>JavaScript</li>
+              <li>Bash</li>
+              <li>SQL</li>
+              <li>HTML / CSS</li>
             </ul>
           </div>
 
-          <!-- Category 2 -->
+          <!-- Databases & OS -->
           <div class="skills__category">
-            <h3 class="skills__category-title">Category 2</h3>
+            <h3 class="skills__category-title" data-i18n="skills.databases">Databases & OS</h3>
             <ul class="skills__list">
-              <li>Skill 1</li>
-              <li>Skill 2</li>
-              <li>Skill 3</li>
-              <li>Skill 4</li>
-            </ul>
-          </div>
-          
-          <!-- Category 3 -->
-          <div class="skills__category">
-            <h3 class="skills__category-title">Category 3</h3>
-            <ul class="skills__list">
-              <li>Skill 1</li>
-              <li>Skill 2</li>
-              <li>Skill 3</li>
-              <li>Skill 4</li>
+              <li>PostgreSQL</li>
+              <li>MongoDB</li>
+              <li>Linux</li>
+              <li>Windows</li>
             </ul>
           </div>
 
-          <!-- Category 4 -->
+          <!-- Tools -->
           <div class="skills__category">
-            <h3 class="skills__category-title">Category 4</h3>
+            <h3 class="skills__category-title" data-i18n="skills.tools">Tools</h3>
             <ul class="skills__list">
-              <li>Skill 1</li>
-              <li>Skill 2</li>
-              <li>Skill 3</li>
-              <li>Skill 4</li>
+              <li>Git & GitHub</li>
+              <li>VS Code</li>
+              <li>Docker</li>
+              <li>LaTeX</li>
+            </ul>
+          </div>
+
+          <!-- Networking -->
+          <div class="skills__category">
+            <h3 class="skills__category-title" data-i18n="skills.networking">Networking</h3>
+            <ul class="skills__list">
+              <li>Wireshark</li>
+              <li>Cisco Packet Tracer</li>
             </ul>
           </div>
       </div>
@@ -293,40 +332,43 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
      <div class="contact__wrapper">
-      <span class="section__subtitle">Get in touch</span>
-      <h2 class="section__title">Contact Me</h2>
+      <span class="section__subtitle" data-i18n="contact.subtitle">Get in touch</span>
+      <h2 class="section__title" data-i18n="contact.title">Contact Me</h2>
 
       <!-- Contact grid (2 columns, 1 row)-->
       <div class="contact__container">
-          
+
         <!-- Left column: Information and Social Media -->
         <div class="contact__info">
-          <h3 class="contact__heading">Let's talk!</h3>
-          <p class="contact__text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed risus orci. Nullam venenatis eros id justo pharetra consequat. Donec viverra tempus ante non malesuada. Sed congue odio quis sem mattis ultrices. Fusce ac convallis dui. Donec finibus scelerisque enim, molestie rhoncus neque tempor eu.
+          <h3 class="contact__heading" data-i18n="contact.heading">Let's talk!</h3>
+          <p class="contact__text" data-i18n="contact.text">
+            Have an internship opportunity, a project idea, or just want to say hi? My inbox is open — I'll get back to you as soon as I can.
           </p>
 
           <!-- Contact information -->
           <ul class="contact__social-list">
-           
+
             <!-- Email -->
             <li>
-              <a href="mailto:tu-correo@email.com" class="contact__link">
-                email@email.com
+              <a href="mailto:benjamin.galvez2@mail.udp.cl" class="contact__link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22 6 12 13 2 6"></polyline></svg>
+                <span>benjamin.galvez2@mail.udp.cl</span>
               </a>
             </li>
-           
+
             <!-- LinkedIn -->
             <li>
-              <a href="https://linkedin.com/in/" target="_blank" class="contact__link">
-                  LinkedIn
+              <a href="https://linkedin.com/in/begale305" target="_blank" class="contact__link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <span>LinkedIn</span>
               </a>
             </li>
-           
+
             <!-- GitHub -->
             <li>
               <a href="https://github.com/Kiraai-Git" target="_blank" class="contact__link">
-                  GitHub
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>GitHub</span>
               </a>
             </li>
           </ul>
@@ -338,30 +380,30 @@
               
             <!-- Name -->
             <div class="form__group">
-              <label for="name" class="form__label">Name</label>
-              <input type="text" id="name" name="name" class="form__input" placeholder="Your name" required>
+              <label for="name" class="form__label" data-i18n="contact.form.name">Name</label>
+              <input type="text" id="name" name="name" class="form__input" placeholder="Your name" data-i18n-placeholder="contact.form.namePh" required>
             </div>
 
             <!-- Email -->
             <div class="form__group">
-              <label for="email" class="form__label">Email</label>
-              <input type="email" id="email" name="email" class="form__input" placeholder="Your email address" required>
+              <label for="email" class="form__label" data-i18n="contact.form.email">Email</label>
+              <input type="email" id="email" name="email" class="form__input" placeholder="Your email address" data-i18n-placeholder="contact.form.emailPh" required>
             </div>
 
             <!-- Subject -->
             <div class="form__group">
-              <label for="subject" class="form__label">Subject</label>
-              <input type="text" id="subject" name="subject" class="form__input" placeholder="What is this about?" required>
+              <label for="subject" class="form__label" data-i18n="contact.form.subject">Subject</label>
+              <input type="text" id="subject" name="subject" class="form__input" placeholder="What is this about?" data-i18n-placeholder="contact.form.subjectPh" required>
             </div>
 
             <!-- Textarea -->
             <div class="form__group">
-              <label for="message" class="form__label">Message</label>
-              <textarea id="message" name="message" class="form__textarea" placeholder="Write your message here..." rows="5" required></textarea>
+              <label for="message" class="form__label" data-i18n="contact.form.message">Message</label>
+              <textarea id="message" name="message" class="form__textarea" placeholder="Write your message here..." data-i18n-placeholder="contact.form.messagePh" rows="5" required></textarea>
             </div>
 
             <!-- Send button -->
-            <button type="submit" class="btn btn--primary form__submit">
+            <button type="submit" class="btn btn--primary form__submit" data-i18n="contact.form.submit">
               Send Message
             </button>
           </form>
@@ -373,12 +415,12 @@
   <!-- Footer Section -->
   <footer class="footer">
     <div class="footer__container">
-      <p class="footer__text">
+      <p class="footer__text" data-i18n="footer.text">
         © 2026 Benjamín Gálvez. Built from scratch with HTML and CSS.
       </p>
 
       <!-- Back to Top Button -->
-      <a id="back-to-top" href="#hero" class="footer__back-top" aria-label="Volver al inicio">
+      <a id="back-to-top" href="#hero" class="footer__back-top" aria-label="Back to top" data-i18n-aria="footer.backToTop" data-i18n="footer.backToTop">
         Go to top
       </a>
     </div>
@@ -430,6 +472,231 @@
     backToTop.addEventListener('click', (event) => {
       event.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  // Theme toggle: light/dark, persisted in localStorage
+  document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) {
+      return;
+    }
+
+    const sunIcon = themeToggle.querySelector('.icon-sun');
+    const moonIcon = themeToggle.querySelector('.icon-moon');
+
+    const updateIcon = (theme) => {
+      const isLight = theme === 'light';
+      sunIcon.style.display = isLight ? 'none' : '';
+      moonIcon.style.display = isLight ? '' : 'none';
+    };
+
+    updateIcon(document.documentElement.getAttribute('data-theme') || 'dark');
+
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateIcon(next);
+    });
+  });
+
+  // Language toggle: EN/ES, persisted in localStorage
+  const translations = {
+    en: {
+      'meta.description': 'Portfolio of Benjamín Gálvez, Computer and Telecommunications Engineering Student.',
+      'nav.home': 'Home',
+      'nav.about': 'About',
+      'nav.projects': 'Projects',
+      'nav.experience': 'Experience',
+      'nav.skills': 'Skills',
+      'nav.contact': 'Contact',
+      'lang.toggle': 'Switch language',
+      'theme.toggle': 'Toggle Dark/Light Mode',
+      'hero.greeting': 'Hello, I am',
+      'hero.role': 'Computer and Telecommunications Engineering Student',
+      'hero.scroll': 'Scroll to About section',
+      'hero.scrollText': 'SCROLL',
+      'about.subtitle': 'Who am I',
+      'about.title': 'About Me',
+      'about.p1': "I'm a fourth-year Computer and Telecommunications Engineering student focused on backend development, networks, and automation. I like building systems that hold up under real conditions, not just in a test case.",
+      'about.p2': "During my first internship, I helped build a CRM from the ground up — leading development on a mass invoicing system that pulled data directly from Chile's SII in real time, and setting up Supabase for authentication across the platform. It's where I first saw how backend decisions play out under real usage.",
+      'about.p3': "Right now I'm focused on gaining real-world experience — I'm working toward my second internship and open to opportunities this summer.",
+      'about.imageAlt': 'About me image',
+      'projects.subtitle': 'My work',
+      'projects.title': 'Projects',
+      'projects.viewProject': 'View project',
+      'projects.cmatch.desc': 'Concurrent matchmaking engine simulating a multithreaded tournament — ELO-based pairing, shared boards guarded across threads, and persistent snapshots.',
+      'projects.tag.concurrency': 'Concurrency',
+      'projects.memsim.desc': 'Memory allocation simulator implementing First Fit, Best Fit, and Worst Fit policies over a virtual address space, driven by trace files.',
+      'projects.tag.systems': 'Systems Programming',
+      'projects.tag.memory': 'Memory Management',
+      'projects.toad.title': 'toad — Process Manager',
+      'projects.toad.desc': 'Background process manager built as a daemon-and-CLI pair, communicating over named pipes (FIFOs) to start, list, and signal processes.',
+      'projects.viewAll': 'View all projects',
+      'experience.subtitle': 'My career',
+      'experience.title': 'Experience',
+      'experience.job1.role': 'Web Development Intern',
+      'experience.job1.duration': 'Jan 2026 – Mar 2026 · Santiago, Chile',
+      'experience.job1.bullet1': 'Led development of a CRM from the ground up, working with React, JSX, JavaScript, and Python.',
+      'experience.job1.bullet2': "Built a mass invoicing and accounting system that pulled data in real time from Chile's SII.",
+      'experience.job1.bullet3': 'Set up Supabase for authentication and centralized user/company management.',
+      'experience.job1.bullet4': 'Wrote Python scripts for automated testing and edge-case handling over CSV data.',
+      'experience.job2.role': 'Academic Tutor',
+      'experience.job2.fullRole': 'Independent Academic Tutor',
+      'experience.job2.duration': 'Oct 2023 – Present · Santiago, Chile / Online',
+      'experience.job2.bullet1': 'Tutor students in math, C++, and networking — from UDP peers to learners abroad.',
+      'experience.job2.bullet2': "Design individualized lessons that adapt to each student's pace and gaps.",
+      'skills.subtitle': 'Core Competencies',
+      'skills.title': 'Technical Skills',
+      'skills.languages': 'Languages',
+      'skills.databases': 'Databases & OS',
+      'skills.tools': 'Tools',
+      'skills.networking': 'Networking',
+      'contact.subtitle': 'Get in touch',
+      'contact.title': 'Contact Me',
+      'contact.heading': "Let's talk!",
+      'contact.text': "Have an internship opportunity, a project idea, or just want to say hi? My inbox is open — I'll get back to you as soon as I can.",
+      'contact.form.name': 'Name',
+      'contact.form.namePh': 'Your name',
+      'contact.form.email': 'Email',
+      'contact.form.emailPh': 'Your email address',
+      'contact.form.subject': 'Subject',
+      'contact.form.subjectPh': 'What is this about?',
+      'contact.form.message': 'Message',
+      'contact.form.messagePh': 'Write your message here...',
+      'contact.form.submit': 'Send Message',
+      'footer.text': '© 2026 Benjamín Gálvez. Built from scratch with HTML and CSS.',
+      'footer.backToTop': 'Go to top',
+    },
+    es: {
+      'meta.description': 'Portafolio de Benjamín Gálvez, estudiante de Ingeniería Civil en Informática y Telecomunicaciones.',
+      'nav.home': 'Inicio',
+      'nav.about': 'Sobre mí',
+      'nav.projects': 'Proyectos',
+      'nav.experience': 'Experiencia',
+      'nav.skills': 'Habilidades',
+      'nav.contact': 'Contacto',
+      'lang.toggle': 'Cambiar idioma',
+      'theme.toggle': 'Cambiar modo claro/oscuro',
+      'hero.greeting': 'Hola, soy',
+      'hero.role': 'Estudiante de Ingeniería Civil en Informática y Telecomunicaciones',
+      'hero.scroll': 'Desplazarse a la sección Sobre mí',
+      'hero.scrollText': 'DESPLÁZATE',
+      'about.subtitle': 'Quién soy',
+      'about.title': 'Sobre mí',
+      'about.p1': 'Soy estudiante de cuarto año de Ingeniería Civil en Informática y Telecomunicaciones, enfocado en desarrollo backend, redes y automatización. Me gusta construir sistemas que funcionen bien en condiciones reales, no solo en un caso de prueba.',
+      'about.p2': "Durante mi primera práctica, ayudé a construir un CRM desde cero liderando el desarrollo de un sistema de facturación masiva que extraía datos en tiempo real desde el SII, y configurando Supabase para la autenticación de toda la plataforma. Ahí fue donde vi por primera vez cómo las decisiones de backend se ponen a prueba con uso real.",
+      'about.p3': 'Ahora mismo estoy enfocado en ganar experiencia real, estoy en busca de mi segunda práctica y abierto a oportunidades para este verano.',
+      'about.imageAlt': 'Foto de Benjamín',
+      'projects.subtitle': 'Mi trabajo',
+      'projects.title': 'Proyectos',
+      'projects.viewProject': 'Ver proyecto',
+      'projects.cmatch.desc': 'Motor de emparejamiento concurrente que simula un torneo multi-threaded — pareo basado en ELO, tableros compartidos protegidos entre threads, y snapshots persistentes.',
+      'projects.tag.concurrency': 'Concurrencia',
+      'projects.memsim.desc': 'Simulador de asignación de memoria que implementa las políticas First Fit, Best Fit y Worst Fit sobre un espacio de direcciones virtual, controlado por archivos de traza.',
+      'projects.tag.systems': 'Programación de Sistemas',
+      'projects.tag.memory': 'Gestión de Memoria',
+      'projects.toad.title': 'toad — Administrador de Procesos',
+      'projects.toad.desc': 'Administrador de procesos en segundo plano construido como un par daemon-CLI, comunicados mediante pipes con nombre (FIFOs) para iniciar, listar y enviar señales a procesos.',
+      'projects.viewAll': 'Ver todos los proyectos',
+      'experience.subtitle': 'Mi trayectoria',
+      'experience.title': 'Experiencia',
+      'experience.job1.role': 'Practicante de Desarrollo Web',
+      'experience.job1.duration': 'Ene. 2026 – Mar. 2026 · Santiago, Chile',
+      'experience.job1.bullet1': 'Lideré el desarrollo de un CRM desde cero, trabajando con React, JSX, JavaScript y Python.',
+      'experience.job1.bullet2': 'Construí un sistema de facturación masiva y contabilidad que extraía datos en tiempo real desde el SII.',
+      'experience.job1.bullet3': 'Configuré Supabase para la autenticación y gestión centralizada de usuarios y empresas.',
+      'experience.job1.bullet4': 'Escribí scripts en Python para pruebas automatizadas y manejo de casos borde con archivos CSV.',
+      'experience.job2.role': 'Tutor Académico',
+      'experience.job2.fullRole': 'Tutor Académico Independiente',
+      'experience.job2.duration': 'Oct. 2023 – Actualidad · Santiago, Chile / Online',
+      'experience.job2.bullet1': 'Doy clases de matemáticas, C++ y redes — a compañeros de la UDP y estudiantes del extranjero.',
+      'experience.job2.bullet2': 'Diseño clases personalizadas que se adaptan al ritmo y las necesidades de cada estudiante.',
+      'skills.subtitle': 'Competencias Principales',
+      'skills.title': 'Habilidades Técnicas',
+      'skills.languages': 'Lenguajes',
+      'skills.databases': 'Bases de Datos y SO',
+      'skills.tools': 'Herramientas',
+      'skills.networking': 'Redes',
+      'contact.subtitle': 'Hablemos',
+      'contact.title': 'Contáctame',
+      'contact.heading': '¡Hablemos!',
+      'contact.text': '¿Tienes una oportunidad de práctica, una idea de proyecto, o solo quieres saludar? Mi bandeja está abierta — te responderé lo antes posible.',
+      'contact.form.name': 'Nombre',
+      'contact.form.namePh': 'Tu nombre',
+      'contact.form.email': 'Correo electrónico',
+      'contact.form.emailPh': 'Tu correo electrónico',
+      'contact.form.subject': 'Asunto',
+      'contact.form.subjectPh': '¿De qué se trata?',
+      'contact.form.message': 'Mensaje',
+      'contact.form.messagePh': 'Escribe tu mensaje aquí...',
+      'contact.form.submit': 'Enviar mensaje',
+      'footer.text': '© 2026 Benjamín Gálvez.',
+      'footer.backToTop': 'Subir',
+    },
+  };
+
+  function applyLanguage(lang) {
+    const dict = translations[lang] || translations.en;
+
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) {
+        el.textContent = dict[key];
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-aria]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-aria');
+      if (dict[key] !== undefined) {
+        el.setAttribute('aria-label', dict[key]);
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (dict[key] !== undefined) {
+        el.setAttribute('placeholder', dict[key]);
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-alt]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-alt');
+      if (dict[key] !== undefined) {
+        el.setAttribute('alt', dict[key]);
+      }
+    });
+
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription && dict['meta.description']) {
+      metaDescription.setAttribute('content', dict['meta.description']);
+    }
+
+    const langLabel = document.getElementById('language-toggle-label');
+    if (langLabel) {
+      langLabel.textContent = lang === 'es' ? 'EN' : 'ES';
+    }
+
+    document.documentElement.setAttribute('lang', lang);
+  }
+
+  const storedLang = localStorage.getItem('lang');
+  const initialLang = storedLang || (navigator.language.toLowerCase().startsWith('es') ? 'es' : 'en');
+  applyLanguage(initialLang);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const languageToggle = document.getElementById('language-toggle');
+    if (!languageToggle) {
+      return;
+    }
+
+    languageToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('lang') || 'en';
+      const next = current === 'es' ? 'en' : 'es';
+      localStorage.setItem('lang', next);
+      applyLanguage(next);
     });
   });
 

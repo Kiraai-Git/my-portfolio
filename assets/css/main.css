@@ -16,18 +16,33 @@
 
 /* --- Tokens --- */
 :root {
-  --color-bg: #0f172a;
-  --color-surface: #1e293b;
-  --color-about-debug: #334155;
-  --color-text: #e2e8f0;
-  --color-text-muted: #94a3b8;
-  --color-border: #475569;
-  --color-card: #1f2937;
-  --color-card-border: rgba(148, 163, 184, 0.28);
-  --color-card-shadow: rgba(2, 6, 23, 0.45);
-  --color-input-bg: #0b1220;
-  --color-cta-bg: #38bdf8;
-  --color-cta-text: #0b1220;
+  color-scheme: dark;
+
+  /* Neutral palette (dark, default) */
+  --color-bg: #0a0a0a;
+  --color-surface: #131313;
+  --color-surface-alt: #1a1a1a;
+  --color-text: #e5e5e5;
+  --color-text-muted: #999999;
+  --color-heading: #fafafa;
+  --color-border: #2e2e2e;
+  --color-card: #161616;
+  --color-card-border: rgba(255, 255, 255, 0.1);
+  --color-card-shadow: rgba(0, 0, 0, 0.55);
+  --color-input-bg: #0d0d0d;
+  --color-placeholder: #7a7a7a;
+  --color-muted-rgb: 163, 163, 163;
+  --color-overlay-rgb: 255, 255, 255;
+
+  /* Single accent — constant across themes */
+  --color-cta-bg: #2563eb;
+  --color-cta-text: #ffffff;
+
+  /* Terminal mock always renders dark, independent of site theme */
+  --terminal-bg: #0d0d0d;
+  --terminal-text: #e5e5e5;
+  --terminal-muted: #8f8f8f;
+  --terminal-border: rgba(255, 255, 255, 0.1);
 
   --navbar-height: 74px;
   --layout-padding-x: 5%;
@@ -44,7 +59,7 @@
   --about-min-height: clamp(460px, 64vh, 760px);
   --about-padding-y: clamp(72px, 10vh, 120px);
   --about-grid-gap: clamp(28px, 4vw, 72px);
-  --about-text-gap: 8px;
+  --about-text-gap: clamp(20px, 2.4vh, 30px);
   --about-image-size: min(100%, 460px);
 
   --projects-padding-y: clamp(72px, 10vh, 120px);
@@ -65,12 +80,39 @@
   --contact-info-width: minmax(280px, 0.9fr);
 }
 
+/* Light theme — applied via the navbar toggle (see inline script in <head>) */
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --color-bg: #ffffff;
+  --color-surface: #f7f7f7;
+  --color-surface-alt: #f0f0f0;
+  --color-text: #3f3f3f;
+  --color-text-muted: #6b6b6b;
+  --color-heading: #111111;
+  --color-border: #e2e2e2;
+  --color-card: #ffffff;
+  --color-card-border: rgba(0, 0, 0, 0.1);
+  --color-card-shadow: rgba(0, 0, 0, 0.08);
+  --color-input-bg: #fafafa;
+  --color-placeholder: #9a9a9a;
+  --color-muted-rgb: 115, 115, 115;
+  --color-overlay-rgb: 0, 0, 0;
+}
+
 /* --- Base --- */
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: 'Inter', system-ui, sans-serif;
   line-height: 1.6;
+}
+
+/* Smooth theme switch instead of an abrupt flip */
+body,
+section,
+nav {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 p {
@@ -106,7 +148,7 @@ p {
 }
 
 .section__title {
-  color: #ffffff;
+  color: var(--color-heading);
   font-size: clamp(1.9rem, 1.6vw + 1.2rem, 3rem);
   line-height: 1.08;
   margin-top: 4px;
@@ -281,7 +323,7 @@ p {
   font-weight: 900;
   letter-spacing: -3px;
   line-height: 1;
-  color: #ffffff;
+  color: var(--color-heading);
 
   text-align: center;
   margin-bottom: 16px;
@@ -348,7 +390,7 @@ p {
 .about {
   min-height: var(--about-min-height);
   padding: var(--about-padding-y) var(--layout-padding-x);
-  background-color: var(--color-about-debug);
+  background-color: var(--color-bg);
 
   display: flex;
   align-items: center;
@@ -373,25 +415,38 @@ p {
   flex-direction: column;
 }
 
+.about__text {
+  max-width: 58ch;
+  color: var(--color-text-muted);
+  font-size: clamp(1rem, 0.25vw + 0.95rem, 1.1rem);
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
+/* Primer párrafo como entrada: un poco más grande y más claro */
+.about__text:first-of-type {
+  color: var(--color-text);
+  font-size: clamp(1.08rem, 0.3vw + 1rem, 1.25rem);
+  line-height: 1.7;
+}
+
+/* Aire entre párrafos (sin tocar la distancia subtítulo/título) */
+.about__text + .about__text {
+  margin-top: var(--about-text-gap);
+}
+
 .about__image {
   grid-column: 2;
   justify-self: end;
-  align-self: start;
-}
+  align-self: center;
 
-.about__text {
-  max-width: 60ch;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: clamp(1rem, 0.25vw + 0.95rem, 1.15rem);
-}
-
-.about__image {
   width: var(--about-image-size);
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  border: 1px solid var(--color-card-border);
+  background: rgba(var(--color-muted-rgb), 0.06);
+  box-shadow: 0 18px 40px var(--color-card-shadow);
 }
 
 /* --- Projects --- */
@@ -416,17 +471,110 @@ p {
 .project-card {
   display: flex;
   flex-direction: column;
+  min-height: var(--projects-card-min-height);
   background-color: transparent;
   border: 1px solid var(--color-card-border);
-  border-radius: 14px;
-  padding: 24px;
-  transition: all 0.3s ease;
+  border-radius: var(--projects-card-radius);
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
   border-color: var(--color-cta-bg);
-  background-color: rgba(255, 255, 255, 0.01);
+  box-shadow: 0 20px 40px var(--color-card-shadow);
+}
+
+/* --- Terminal mock (replaces a screenshot for CLI/systems projects) --- */
+/* Always renders dark, like a real terminal, regardless of site theme */
+.project-card__terminal {
+  background-color: var(--terminal-bg);
+  border-bottom: 1px solid var(--terminal-border);
+}
+
+.terminal__bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--terminal-border);
+}
+
+.terminal__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.terminal__dot--red {
+  background-color: #f87171;
+}
+
+.terminal__dot--yellow {
+  background-color: #fbbf24;
+}
+
+.terminal__dot--green {
+  background-color: #34d399;
+}
+
+.terminal__title {
+  margin-left: 6px;
+  color: var(--terminal-muted);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.75rem;
+}
+
+.terminal__body {
+  padding: 16px 18px 18px;
+  display: grid;
+  gap: 6px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  white-space: pre;
+}
+
+.terminal__line {
+  color: var(--terminal-text);
+}
+
+.terminal__prompt {
+  color: var(--color-cta-bg);
+  margin-right: 8px;
+}
+
+.terminal__output {
+  color: var(--terminal-muted);
+}
+
+.terminal__cursor {
+  display: inline-block;
+  width: 6px;
+  height: 1em;
+  margin-left: 2px;
+  background-color: var(--color-cta-bg);
+  vertical-align: text-bottom;
+  animation: terminal-blink 1.1s steps(1) infinite;
+}
+
+@keyframes terminal-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal__cursor {
+    animation: none;
+  }
+}
+
+.project-card__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px 24px 24px;
 }
 
 .project-card__header {
@@ -472,11 +620,11 @@ p {
   align-items: center;
   padding: 4px 10px;
   border-radius: 6px;
-  border: 1px solid rgba(148, 163, 184, 0.15);
+  border: 1px solid rgba(var(--color-muted-rgb), 0.15);
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--color-text-muted);
-  background: rgba(148, 163, 184, 0.05);
+  background: rgba(var(--color-muted-rgb), 0.05);
 }
 
 .projects__footer {
@@ -494,8 +642,8 @@ p {
   min-height: 46px;
   padding: 0 24px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(var(--color-overlay-rgb), 0.03);
+  border: 1px solid rgba(var(--color-muted-rgb), 0.25);
   color: var(--color-text);
   font-size: 0.9rem;
   font-weight: 500;
@@ -505,9 +653,9 @@ p {
 }
 
 .btn--glass:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(var(--color-overlay-rgb), 0.08);
   border-color: var(--color-cta-bg);
-  color: #ffffff;
+  color: var(--color-heading);
   transform: translateY(-2px);
 }
 
@@ -519,10 +667,35 @@ p {
   transform: translateX(4px);
 }
 
+.btn--primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 0 28px;
+  border: none;
+  border-radius: 999px;
+  background: var(--color-cta-bg);
+  color: var(--color-cta-text);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px var(--color-card-shadow);
+  filter: brightness(1.1);
+}
+
 /* --- Experience --- */
 .experience {
   padding: var(--experience-padding-y) var(--layout-padding-x);
-  background-color: var(--color-about-debug);
+  background-color: var(--color-surface-alt);
 }
 
 .experience__container {
@@ -555,7 +728,7 @@ p {
 
 .experience__tab:hover {
   transform: translateX(2px);
-  border-color: rgba(148, 163, 184, 0.48);
+  border-color: rgba(var(--color-muted-rgb), 0.48);
 }
 
 .experience__tab--active {
@@ -650,7 +823,7 @@ p {
 /* --- Contact --- */
 .contact {
   padding: var(--contact-padding-y) var(--layout-padding-x);
-  background-color: var(--color-about-debug);
+  background-color: var(--color-surface-alt);
 }
 
 .contact__container {
@@ -689,22 +862,41 @@ p {
 
 .contact__link {
   display: inline-flex;
-  width: 100%;
-  min-height: 42px;
   align-items: center;
-  padding: 0 12px;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 14px;
   border: 1px solid var(--color-card-border);
   border-radius: 10px;
   text-decoration: none;
   color: var(--color-text);
+  font-size: 0.92rem;
   font-weight: 500;
-  background: rgba(148, 163, 184, 0.1);
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  background: transparent;
+  transition: border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.contact__link svg {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+}
+
+.contact__link span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .contact__link:hover {
   transform: translateX(2px);
-  border-color: rgba(148, 163, 184, 0.48);
+  border-color: var(--color-cta-bg);
+  color: var(--color-heading);
+}
+
+.contact__link:hover svg {
+  color: var(--color-cta-bg);
 }
 
 .contact__form-container {
@@ -712,7 +904,7 @@ p {
   border: 1px solid var(--color-card-border);
   border-radius: 16px;
   padding: 22px 22px 24px;
-  box-shadow: 0 12px 28px var(--color-card-shadow);
+  box-shadow: 0 10px 26px var(--color-card-shadow);
 }
 
 .contact__form {
@@ -744,7 +936,7 @@ p {
 
 .form__input::placeholder,
 .form__textarea::placeholder {
-  color: #8a8a8a;
+  color: var(--color-placeholder);
 }
 
 .form__input:focus,
@@ -788,19 +980,20 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
-  padding: 0 16px;
+  min-height: 46px;
+  padding: 0 28px;
   border-radius: 999px;
-  border: 1px solid var(--color-card-border);
   text-decoration: none;
   color: var(--color-cta-text);
   background: var(--color-cta-bg);
+  font-size: 0.9rem;
+  font-weight: 600;
   box-shadow: 0 10px 24px var(--color-card-shadow);
   opacity: 0;
   visibility: hidden;
   transform: translateY(12px);
   pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
   z-index: 120;
 }
 
@@ -813,6 +1006,17 @@ p {
 
 .footer__back-top:hover {
   transform: translateY(-2px);
+  box-shadow: 0 14px 30px var(--color-card-shadow);
+  filter: brightness(1.1);
+}
+
+/* --- Mobile Breakpoints --- */
+
+/* Collapse the fixed 3-column projects grid before it gets cramped */
+@media (max-width: 900px) {
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* --- Desktop Breakpoints --- */
