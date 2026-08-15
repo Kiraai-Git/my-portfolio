@@ -35,13 +35,12 @@
     <div class="navbar__actions">
 
       <button id="language-toggle" class="btn-lang" aria-label="Cambiar idioma">
-        <!-- Icono de Globo Terráqueo -->
+        <!-- World icon -->
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"></circle>
           <line x1="2" y1="12" x2="22" y2="12"></line>
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
         </svg>
-        <!-- Texto del idioma -->
         <span>ES</span>
       </button>
 
@@ -88,251 +87,105 @@
     
     <!-- About Section -->
     <section id="about" class="about">
-      <span class="section__subtitle">Who am I</span>
-      <h2 class="section__title">About Me</h2>
-      
-      <p class="about__text"> 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed risus orci. Nullam venenatis eros id justo pharetra consequat. Donec viverra tempus ante non malesuada. Sed congue odio quis sem mattis ultrices. Fusce ac convallis dui. Donec finibus scelerisque enim, molestie rhoncus neque tempor eu.
-      </p>
-      <p class="about__text"> 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed risus orci. Nullam venenatis eros id justo pharetra consequat. Donec viverra tempus ante non malesuada. Sed congue odio quis sem mattis ultrices. Fusce ac convallis dui. Donec finibus scelerisque enim, molestie rhoncus neque tempor eu.
-      </p>
-      <p class="about__text"> 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed risus orci. Nullam venenatis eros id justo pharetra consequat. Donec viverra tempus ante non malesuada. Sed congue odio quis sem mattis ultrices. Fusce ac convallis dui. Donec finibus scelerisque enim, molestie rhoncus neque tempor eu.
-      </p>
+      <div class="about__container">
+        <div class="about__content">
+          <span class="section__subtitle">Who am I</span>
+          <h2 class="section__title">About Me</h2>
 
-      <img src="image.jpg" alt="About me image" class="about__image">
+          <p class="about__text"> 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed risus orci. Nullam venenatis eros id justo pharetra consequat. Donec viverra tempus ante non malesuada. Sed congue odio quis sem mattis ultrices. Fusce ac convallis dui. Donec finibus scelerisque enim, molestie rhoncus neque tempor eu.
+          </p>
+          <p class="about__text"> 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed risus orci. Nullam venenatis eros id justo pharetra consequat. Donec viverra tempus ante non malesuada. Sed congue odio quis sem mattis ultrices. Fusce ac convallis dui. Donec finibus scelerisque enim, molestie rhoncus neque tempor eu.
+          </p>
+          <p class="about__text"> 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed risus orci. Nullam venenatis eros id justo pharetra consequat. Donec viverra tempus ante non malesuada. Sed congue odio quis sem mattis ultrices. Fusce ac convallis dui. Donec finibus scelerisque enim, molestie rhoncus neque tempor eu.
+          </p>
+        </div>
+        <img src="image.jpg" alt="About me image" class="about__image">
+      </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
-      <span class="section__subtitle">My work</span>
-      <h2 class="section__title">Projects</h2>
-
-      <!-- Project grid (3 columns, 2 rows) -->
-      <div class="projects__grid">
-    
-        <!-- Example project 1 card -->
-        <article class="project-card">
-            
-          <!-- Project image -->
-          <div class="project-card__image-container">
-            <img src="project1image.jpg" alt="project 1 image" class="project-card__image">
-          </div>
-
-          <!-- Card content (Title, Description, Technologies, Link) -->
-          <div class="project-card__content">
-              
-            <!-- Title -->
-            <h3 class="project-card__title">Project 1 title</h3>
-            
-            <!-- Description -->
-            <p class="project-card__desc">Project 1 description</p>
-            
-
-            <!-- Technologies -->
-            <div class="project-card__tech">
-              <span class="tech-tag">Tech1</span>
-              <span class="tech-tag">Tech2</span>
-              <span class="tech-tag">Tech3</span>
-            </div>
-
-            <!-- Link -->
-            <div class="project-card__links">
-              <a href="https://github.com/Kiraai-Git" target="_blank" class="project-link">
-                See more
-              </a>
-            </div>
+      <div class="projects__container">
         
-          </div>
-        </article>
+        <span class="section__subtitle">My work</span>
+        <h2 class="section__title">Projects</h2>
 
-        <!-- Example project 2 card -->
-        <article class="project-card">
-            
-          <!-- Project image -->
-          <div class="project-card__image-container">
-            <img src="project2image.jpg" alt="project 2 image" class="project-card__image">
-          </div>
-
-          <!-- Card content (Title, Description, Technologies, Link) -->
-          <div class="project-card__content">
-              
-            <!-- Title -->
-            <h3 class="project-card__title">Project 2 title</h3>
-            
-            <!-- Description -->
-            <p class="project-card__desc">Project 2 description</p>
-            
-
-            <!-- Technologies -->
-            <div class="project-card__tech">
-              <span class="tech-tag">Tech1</span>
-              <span class="tech-tag">Tech2</span>
-              <span class="tech-tag">Tech3</span>
+        <!-- Project grid (1 column) -->
+        <div class="projects__grid">
+      
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div class="project-card__content">
+              <div class="project-card__header">
+                <h3 class="project-card__title">Project Title 1</h3>
+                <a href="https://github.com/Kiraai-Git" target="_blank" class="project-link" aria-label="Ver proyecto">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+              </div>
+              <p class="project-card__desc">Project description</p>
+              <div class="project-card__tech">
+                <span class="tech-tag">Tech 1</span>
+                <span class="tech-tag">Tech 2</span>
+                <span class="tech-tag">Tech 3</span>
+              </div>
             </div>
+          </article>
 
-            <!-- Link -->
-            <div class="project-card__links">
-              <a href="https://github.com/Kiraai-Git" target="_blank" class="project-link">
-                See more
-              </a>
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="project-card__content">
+              <div class="project-card__header">
+                <h3 class="project-card__title">Project Title 2</h3>
+                <a href="https://github.com/Kiraai-Git" target="_blank" class="project-link" aria-label="Ver proyecto">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+              </div>
+              <p class="project-card__desc">Project description</p>
+              <div class="project-card__tech">
+                <span class="tech-tag">Tech 1</span>
+                <span class="tech-tag">Tech 2</span>
+                <span class="tech-tag">Tech 3</span>
+              </div>
             </div>
-        
-          </div>
-        </article>
+          </article>
 
-        <!-- Example project 3 card -->
-        <article class="project-card">
-            
-          <!-- Project image -->
-          <div class="project-card__image-container">
-            <img src="project3image.jpg" alt="project 3 image" class="project-card__image">
-          </div>
-
-          <!-- Card content (Title, Description, Technologies, Link) -->
-          <div class="project-card__content">
-              
-            <!-- Title -->
-            <h3 class="project-card__title">Project 3 title</h3>
-            
-            <!-- Description -->
-            <p class="project-card__desc">Project 3 description</p>
-            
-
-            <!-- Technologies -->
-            <div class="project-card__tech">
-              <span class="tech-tag">Tech1</span>
-              <span class="tech-tag">Tech2</span>
-              <span class="tech-tag">Tech3</span>
+          <!-- Project 3 -->
+          <article class="project-card">
+            <div class="project-card__content">
+              <div class="project-card__header">
+                <h3 class="project-card__title">Project Title 3</h3>
+                <a href="https://github.com/Kiraai-Git" target="_blank" class="project-link" aria-label="Ver proyecto">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+              </div>
+              <p class="project-card__desc">Project description</p>
+              <div class="project-card__tech">
+                <span class="tech-tag">Tech 1</span>
+                <span class="tech-tag">Tech 2</span>
+                <span class="tech-tag">Tech 3</span>
+              </div>
             </div>
+          </article>
 
-            <!-- Link -->
-            <div class="project-card__links">
-              <a href="https://github.com/Kiraai-Git" target="_blank" class="project-link">
-                See more
-              </a>
-            </div>
-        
-          </div>
-        </article>
-
-        <!-- Example project 4 card -->
-        <article class="project-card">
+        </div>
             
-          <!-- Project image -->
-          <div class="project-card__image-container">
-            <img src="project4image.jpg" alt="project 4 image" class="project-card__image">
-          </div>
+        <!-- See more button -->
+        <div class="projects__footer">
+          <a href="https://github.com/Kiraai-Git" target="_blank" class="btn btn--glass">
+            <span>View all projects</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
 
-          <!-- Card content (Title, Description, Technologies, Link) -->
-          <div class="project-card__content">
-              
-            <!-- Title -->
-            <h3 class="project-card__title">Project 4 title</h3>
-            
-            <!-- Description -->
-            <p class="project-card__desc">Project 4 description</p>
-            
-
-            <!-- Technologies -->
-            <div class="project-card__tech">
-              <span class="tech-tag">Tech1</span>
-              <span class="tech-tag">Tech2</span>
-              <span class="tech-tag">Tech3</span>
-            </div>
-
-            <!-- Link -->
-            <div class="project-card__links">
-              <a href="https://github.com/Kiraai-Git" target="_blank" class="project-link">
-                See more
-              </a>
-            </div>
-        
-          </div>
-        </article>
-
-        <!-- Example project 5 card -->
-        <article class="project-card">
-            
-          <!-- Project image -->
-          <div class="project-card__image-container">
-            <img src="project5image.jpg" alt="project 5 image" class="project-card__image">
-          </div>
-
-          <!-- Card content (Title, Description, Technologies, Link) -->
-          <div class="project-card__content">
-              
-            <!-- Title -->
-            <h3 class="project-card__title">Project 5 title</h3>
-            
-            <!-- Description -->
-            <p class="project-card__desc">Project 5 description</p>
-            
-
-            <!-- Technologies -->
-            <div class="project-card__tech">
-              <span class="tech-tag">Tech1</span>
-              <span class="tech-tag">Tech2</span>
-              <span class="tech-tag">Tech3</span>
-            </div>
-
-            <!-- Link -->
-            <div class="project-card__links">
-              <a href="https://github.com/Kiraai-Git" target="_blank" class="project-link">
-                See more
-              </a>
-            </div>
-        
-          </div>
-        </article>
-
-         <!-- Example project 6 card -->
-        <article class="project-card">
-            
-          <!-- Project image -->
-          <div class="project-card__image-container">
-            <img src="project6image.jpg" alt="project 6 image" class="project-card__image">
-          </div>
-
-          <!-- Card content (Title, Description, Technologies, Link) -->
-          <div class="project-card__content">
-              
-            <!-- Title -->
-            <h3 class="project-card__title">Project 6 title</h3>
-            
-            <!-- Description -->
-            <p class="project-card__desc">Project 6 description</p>
-            
-
-            <!-- Technologies -->
-            <div class="project-card__tech">
-              <span class="tech-tag">Tech1</span>
-              <span class="tech-tag">Tech2</span>
-              <span class="tech-tag">Tech3</span>
-            </div>
-
-            <!-- Link -->
-            <div class="project-card__links">
-              <a href="https://github.com/Kiraai-Git" target="_blank" class="project-link">
-                See more
-              </a>
-            </div>
-        
-          </div>
-        </article>
-      </div>
-          
-      <!-- See more button -->
-      <div class="projects__footer">
-        <a href="https://github.com/Kiraai-Git" target="_blank" class="btn btn--primary">
-          View all projects
-        </a>
       </div>
     </section>
 
     <!-- Experience Section -->
     <section id="experience" class="experience">
+     <div class="experience__wrapper">
       <span class="section__subtitle">My career</span>
       <h2 class="section__title">Experience</h2>
 
@@ -381,9 +234,11 @@
 
         </div>
       </div>
+     </div>
     </section>
 
     <section id="skills" class="skills">
+     <div class="skills__wrapper">
       <span class="section__subtitle">Core Competencies</span>
       <h2 class="section__title">Technical Skills</h2>
 
@@ -432,10 +287,12 @@
             </ul>
           </div>
       </div>
+     </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
+     <div class="contact__wrapper">
       <span class="section__subtitle">Get in touch</span>
       <h2 class="section__title">Contact Me</h2>
 
@@ -510,6 +367,7 @@
           </form>
         </div>
       </div>
+     </div>
     </section>
   </main>
   <!-- Footer Section -->
